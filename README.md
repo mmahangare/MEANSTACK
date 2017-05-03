@@ -1,2 +1,0 @@
-# MEANSTACK
-MEANSTACK example
