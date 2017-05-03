@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Angular 2 Components Introduction</title>
+
+    <!-- 1. Load libraries -->
+    <!-- 1.1. Polyfills for browser incompatibility -->
+    <!-- 1.2. SystemJS for importing dependencies when required -->
+    <!-- 1.3. RxJS requirement for AngularJS -->
+    <!-- 1.4. AngularJS for other features -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- 2. Configure SystemJS and Import to associate the app to view -->
+    <script>
+        System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+
+      //just like calling  main method in c# java c++
+      //bootstraping ngular2 application
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+</head>
+<!-- 3. Display the application -->
+
+<body>
+    <!-- 4. The name of the root component can be anything -->
+    <div class="container">
+        <app-comp>Loading...</app-comp>
+    </div>
+
+</body>
+
+</html>
